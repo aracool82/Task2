@@ -14,10 +14,7 @@ public class Server : MonoBehaviour
 
     public event UnityAction<IResourceble> SendResource;
 
-    public void Conected()
-    {
-        _isWork = true;
-    }
+    public void Conected() => _isWork = true;
 
     private void Update()
     {
@@ -39,8 +36,5 @@ public class Server : MonoBehaviour
         }
     }
 
-    private void SendResources(IResourceble resource)
-    {
-        SendResource?.Invoke(resource);
-    }
+    private void SendResources(IResourceble resource) => SendResource?.Invoke(resource);
 }
